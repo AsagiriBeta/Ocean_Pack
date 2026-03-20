@@ -4,6 +4,10 @@ extends: [ PALETTE_OCEAN, EQ_OCEAN, CARVING_OCEAN, BASE ]
 vanilla: minecraft:warm_ocean
 color: $biomes/colors.yml:TROPICAL_OCEAN
 
+features:
+  underwater-flora:
+    - SEA_PICKLES
+
 colors:
   grass: 0x8eb971
   foliage: 0x71a74d

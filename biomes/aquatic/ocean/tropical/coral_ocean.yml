@@ -5,9 +5,10 @@ vanilla: minecraft:warm_ocean
 color: $biomes/colors.yml:CORAL_OCEAN
 
 features:
-  flora:
+  underwater-flora:
     - CORAL_PLANTS
     - CORAL_FANS
+    - SEA_PICKLES
   trees:
     - DENDRIFORM_REEF
     - BALL_REEF

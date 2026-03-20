@@ -1,0 +1,12 @@
+setWaterlog(true);
+
+// Sea pickle colonies generate as 1-4 pickles per block in vanilla.
+num picklesCount = 1 + randomInt(4);
+str blockID = "minecraft:sea_pickle[waterlogged=true,pickles=1]";
+
+if(picklesCount == 2) blockID = "minecraft:sea_pickle[waterlogged=true,pickles=2]";
+else if(picklesCount == 3) blockID = "minecraft:sea_pickle[waterlogged=true,pickles=3]";
+else if(picklesCount == 4) blockID = "minecraft:sea_pickle[waterlogged=true,pickles=4]";
+
+block(0, 0, 0, blockID);
+

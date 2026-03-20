@@ -1,0 +1,39 @@
+id: SEA_PICKLES
+type: FEATURE
+
+distributor:
+  type: SAMPLER
+  sampler:
+    type: POSITIVE_WHITE_NOISE
+    salt: 7777
+  threshold: 0.8
+
+locator:
+  type: PATTERN
+  range:
+    min: 0
+    max: 60
+  pattern:
+    type: AND
+    patterns:
+      - type: MATCH
+        block: minecraft:water
+        offset: 0
+      - type: MATCH_SET
+        blocks: $features/vegetation/meta.yml:sea-pickle-support-blocks
+        offset: -1
+
+structures:
+  distribution:
+    type: DOMAIN_WARP
+    amplitude: 3
+    warp:
+      type: GAUSSIAN
+    sampler:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.04
+    salt: 8888
+  structures:
+    - sea_pickles: 1
+    - blank: 5
+
