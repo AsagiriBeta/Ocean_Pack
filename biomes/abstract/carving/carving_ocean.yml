@@ -9,7 +9,13 @@ carving:
     variables:
       "<<":
         - biomes/abstract/carving/carving_land.yml:carving.sampler.variables
-      carvingMaxHeight: 40
+      # 数值由 meta.yml:ocean-carving 控制（洞潜向默认抬高上限、略增密度）
+      carvingMaxHeight: ${meta.yml:ocean-carving.max-height}
+      carvingThreshold: ${meta.yml:ocean-carving.threshold}
+      cheeseStrength: ${meta.yml:ocean-carving.cheese-strength}
+      spaghettiStrengthLarge: ${meta.yml:ocean-carving.spaghetti-large}
+      spaghettiStrengthSmall: ${meta.yml:ocean-carving.spaghetti-small}
+      megaCaveStrength: ${meta.yml:ocean-carving.mega-cave-strength}
 
     expression: $biomes/abstract/carving/carving_land.yml:carving.sampler.expression
     samplers: $biomes/abstract/carving/carving_land.yml:carving.sampler.samplers

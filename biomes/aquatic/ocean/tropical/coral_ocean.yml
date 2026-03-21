@@ -6,6 +6,8 @@ color: $biomes/colors.yml:CORAL_OCEAN
 
 features:
   underwater-flora:
+    # 防止本段 underwater-flora 覆盖父级时丢掉海草（旧包海草多来自 BASE 合并）
+    - SEAGRASS
     - CORAL_PLANTS
     - CORAL_FANS
     - SEA_PICKLES

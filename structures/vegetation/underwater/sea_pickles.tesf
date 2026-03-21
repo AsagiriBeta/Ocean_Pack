@@ -1,12 +1,13 @@
-setWaterlog(true);
-
-// Sea pickle colonies generate as 1-4 pickles per block in vanilla.
+// 不在此调用 setWaterlog：方块 ID 已带 waterlogged=true，重复水浸可能导致放置失败
+// 原版：群落 1～4 个海泡菜在同一方块上（pickles 状态）
 num picklesCount = 1 + randomInt(4);
 str blockID = "minecraft:sea_pickle[waterlogged=true,pickles=1]";
 
 if(picklesCount == 2) blockID = "minecraft:sea_pickle[waterlogged=true,pickles=2]";
 else if(picklesCount == 3) blockID = "minecraft:sea_pickle[waterlogged=true,pickles=3]";
 else if(picklesCount == 4) blockID = "minecraft:sea_pickle[waterlogged=true,pickles=4]";
+
+if (getBlock(0, 1, 0) != "minecraft:water") fail;
 
 block(0, 0, 0, blockID);
 

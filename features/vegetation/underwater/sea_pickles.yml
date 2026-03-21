@@ -6,13 +6,14 @@ distributor:
   sampler:
     type: POSITIVE_WHITE_NOISE
     salt: 7777
-  threshold: 0.8
+  # 与海草等水下特征一致；0.8 叠加 1/6 结构权重后整体过稀，容易「完全看不到」
+  threshold: 0.5
 
 locator:
   type: PATTERN
   range:
     min: 0
-    max: 60
+    max: 62
   pattern:
     type: AND
     patterns:
@@ -34,6 +35,6 @@ structures:
       frequency: 0.04
     salt: 8888
   structures:
-    - sea_pickles: 1
-    - blank: 5
+    - sea_pickles: 2
+    - blank: 4
 

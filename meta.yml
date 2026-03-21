@@ -15,7 +15,8 @@ biome-distribution:
   # decreasing it.
   # Default: 100
 
-  temperature-scale: 75
+  # 提高后：冷/暖洋带更宽，同类温度海洋连成更大片（ocean-only 包更「一片一种洋」）
+  temperature-scale: 100
   # Controls the scale of temperature zones. Most biomes are placed according to
   # a temperature map so hot biomes can't generate next to cold biomes, as well as
   # allowing for biomes of similar temperatures to generate together. Increasing this
@@ -39,7 +40,8 @@ biome-distribution:
   #        elevation map that distributes biomes of similar elevation together!
   # Default: 35
 
-  variation-scale: 60
+  # 提高后：同一温度带内 TROPICAL_OCEAN / CORAL_OCEAN 等细分变体斑块更大
+  variation-scale: 100
   # Controls biome variations within each temperature + precipitation + elevation zone.
   # Some biomes belong to the same groups, and so we have an extra variation map that
   # determines which of these biomes within the same group get generated.
@@ -83,6 +85,24 @@ biome-distribution:
   # e.g. if you have a biome that is 300 blocks wide with a scale of 1, and
   # increase that scale to 2, that biome will generate 600 blocks wide.
   # Default: 1
+
+# ---
+# 海中洞潜 / 水下石质空洞（海洋 carving）
+# ---
+# 海平面约在 y=62（见 biomes/abstract/base.yml 的 ocean.level）。
+# 默认 Terra 的 CARVING_OCEAN 仅把 carvingMaxHeight 设为 40，浅海至中层水体里连通空洞较少。
+# 下面参数通过 biomes/abstract/carving/carving_ocean.yml 注入，便于做「洞潜」向探索。
+#
+# 想更贴近原版浅海实心感：max-height 调回 40、threshold 调回 0.55 左右即可。
+ocean-carving:
+  # 雕刻向上延伸到的最大 y（越高越靠近海面，越容易从海床钻进大空洞）
+  max-height: 58
+  # 越低空洞越多（与 carving_land 默认 0.55 相比略激进）
+  threshold: 0.48
+  cheese-strength: 0.88
+  spaghetti-large: 0.62
+  spaghetti-small: 0.60
+  mega-cave-strength: 0.38
 
 # Misc global config stuff
 

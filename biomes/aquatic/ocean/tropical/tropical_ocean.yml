@@ -6,6 +6,8 @@ color: $biomes/colors.yml:TROPICAL_OCEAN
 
 features:
   underwater-flora:
+    # 原版暖水洋有海草、无海带；此处覆盖 BASE 的 KELP+SEAGRASS，仅保留海草 + 海泡菜
+    - SEAGRASS
     - SEA_PICKLES
 
 colors:
